@@ -5,9 +5,11 @@
 #include <string>
 #include <unordered_map>
 
-class CommandParser {
+class CommandParser
+{
 public:
-    static CommandType ParseCommand(const std::string& command) {
+    static CommandType ParseCommand(const std::string& command)
+    {
         static const std::unordered_map<std::string, CommandType> commandMap = {
             {"add", CommandType::ADD},
             {"delete", CommandType::DELETE},

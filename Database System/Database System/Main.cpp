@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include "DatabaseManager.h"
 #include "CommandParser.h"
 
@@ -22,9 +22,12 @@ int main()
                 std::string typeName;
                 int numFields;
                 std::vector<std::string> fields;
+                std::vector<std::string> primaryKeys;
+                std::vector<ForeignKey> foreignKeys; // ✅ Use the new struct
 
                 std::cout << "Enter new record type name: ";
                 std::cin >> typeName;
+
                 std::cout << "How many fields? ";
                 std::cin >> numFields;
 
@@ -34,12 +37,31 @@ int main()
                     std::cout << "Enter field " << i + 1 << ": ";
                     std::cin >> fieldName;
                     fields.push_back(fieldName);
+
+                    char choice;
+                    std::cout << "Is this field a Primary Key (P), Foreign Key (F), or None (N)? ";
+                    std::cin >> choice;
+
+                    if (choice == 'P' || choice == 'p')
+                        primaryKeys.push_back(fieldName);
+                    else if (choice == 'F' || choice == 'f')
+                    {
+                        std::string referencedType, referencedField;
+                        std::cout << "Referenced record type for " << fieldName << ": ";
+                        std::cin >> referencedType;
+                        std::cout << "Referenced field in " << referencedType << ": ";
+                        std::cin >> referencedField;
+
+                        foreignKeys.push_back({ fieldName, referencedType, referencedField });
+                    }
                 }
 
-                manager->DefineNewType(typeName, fields);
+                manager->DefineNewType(typeName, fields, primaryKeys, foreignKeys);
+                std::cout << "Record type '" << typeName << "' defined successfully!\n";
+
                 break;
             }
-            case CommandType::ADD:
+            case CommandType::ADD: 
             {
                 std::string type, name;
                 std::vector<std::string> values;
@@ -49,24 +71,30 @@ int main()
 
                 if (manager->recordSchemas.find(type) == manager->recordSchemas.end())
                 {
-                    std::cerr << "Type not found!\n";
-                    continue;
+                    std::cerr << "Error: Record type not found!\n";
+                    break;
                 }
 
                 std::cout << "Enter name: ";
                 std::cin >> name;
 
-                for (const auto& field : manager->recordSchemas[type])
+                const RecordSchema& schema = manager->recordSchemas[type];
+
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                for (const auto& field : schema.fields)
                 {
                     std::string value;
                     std::cout << "Enter value for " << field << ": ";
-                    std::cin.ignore();
+
                     std::getline(std::cin, value);
                     values.push_back(value);
                 }
 
-                manager->Add(type, name, values);
-                std::cout << "Record added!\n";
+                if (manager->Add(0, type, name, values))
+                    std::cout << "Record added successfully!\n";
+                else
+                    std::cerr << "Failed to add record due to validation errors.\n";
+
                 break;
             }
             case CommandType::LISTTYPES:
@@ -84,7 +112,8 @@ int main()
                 std::string filePath;
                 std::cout << "Enter file path: ";
                 std::cin >> filePath;
-                manager->SaveToFile(filePath);
+                if (manager->SaveToFile(filePath))
+                    std::cout << "Records successfully saved to " << filePath << std::endl;
                 break;
             }
             case CommandType::LOAD:

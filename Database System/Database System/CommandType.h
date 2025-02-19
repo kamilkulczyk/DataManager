@@ -1,7 +1,8 @@
 #ifndef COMMANDTYPE_H
 #define COMMANDTYPE_H
 
-enum class CommandType {
+enum class CommandType
+{
     ADD,
     DELETE,
     DEFINE,

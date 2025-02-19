@@ -47,5 +47,8 @@
     <ClInclude Include="CommandParser.h">
       <Filter>Header Files\CommandUtilities</Filter>
     </ClInclude>
+    <ClInclude Include="RecordSchema.h">
+      <Filter>Header Files\Records</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

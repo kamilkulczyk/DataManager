@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="CommandParser.h" />
     <ClInclude Include="DynamicRecord.h" />
+    <ClInclude Include="RecordSchema.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
