@@ -1,7 +1,9 @@
 # Database System
 
 ## Overview
-This is a C++-based database management system that allows users to create, store, and manage different types of records dynamically. The project demonstrates an understanding of object-oriented programming, dynamic data structures, and smart pointers.
+This is a C++-based database management system that allows users to create, store, and manage different types of records dynamically. It can be saved and loaded from the file. As for now it uses quirky structure to store schema and data. All the data is stored as text.
+
+The project demonstrates an understanding of object-oriented programming, dynamic data structures, and smart pointers.
 This is a for fun project only.
 
 ## Features
