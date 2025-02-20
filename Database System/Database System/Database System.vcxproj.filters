@@ -39,6 +39,12 @@
     <ClCompile Include="DatabaseManager.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="TerminalInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DynamicRecord.h">
@@ -49,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="RecordSchema.h">
       <Filter>Header Files\Records</Filter>
+    </ClInclude>
+    <ClInclude Include="TerminalInterface.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,43 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\TerminalInterface.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\TerminalInterface.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandParser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\CommandParser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DatabaseManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\DatabaseManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DatabaseManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\DatabaseManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\RecordSchema.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\RecordSchema.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DynamicRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\DynamicRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\PROFESSIONAL\\VC\\TOOLS\\MSVC\\14.42.34433\\INCLUDE\\UTILITY||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandParser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\CommandParser.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\Record.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\CommandType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DatabaseManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\DatabaseManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandParser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\CommandParser.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\TerminalInterface.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\TerminalInterface.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DatabaseManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\DatabaseManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\RecordSchema.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\RecordSchema.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\Record.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DynamicRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\DynamicRecord.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A69CA634-7D5B-4775-B052-40F2D2C49F30}|Database System\\Database System.vcxproj|solutionrelative:Database System\\CommandType.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,134 +58,160 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "utility",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.42.34433\\include\\utility",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.42.34433\\include\\utility",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.42.34433\\include\\utility",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.42.34433\\include\\utility",
-              "ViewState": "AgIAACQBAAAAAAAAAAAIwEIBAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-02-19T17:54:09.965Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "RecordSchema.h",
               "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\RecordSchema.h",
               "RelativeDocumentMoniker": "Database System\\RecordSchema.h",
               "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\RecordSchema.h",
               "RelativeToolTip": "Database System\\RecordSchema.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-19T15:57:09.714Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Record.h",
-              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.h",
-              "RelativeDocumentMoniker": "Database System\\Record.h",
-              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.h",
-              "RelativeToolTip": "Database System\\Record.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAgwCAAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-19T15:22:56.739Z",
+              "WhenOpened": "2025-02-20T12:27:32.677Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "CommandParser.h",
-              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandParser.h",
-              "RelativeDocumentMoniker": "Database System\\CommandParser.h",
-              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandParser.h",
-              "RelativeToolTip": "Database System\\CommandParser.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "Title": "Record.h",
+              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.h",
+              "RelativeDocumentMoniker": "Database System\\Record.h",
+              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.h",
+              "RelativeToolTip": "Database System\\Record.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-17T21:04:51.303Z",
+              "WhenOpened": "2025-02-19T23:22:29.387Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CommandType.h",
-              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandType.h",
-              "RelativeDocumentMoniker": "Database System\\CommandType.h",
-              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandType.h",
-              "RelativeToolTip": "Database System\\CommandType.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-17T20:57:33.881Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "DynamicRecord.h",
               "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DynamicRecord.h",
               "RelativeDocumentMoniker": "Database System\\DynamicRecord.h",
               "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DynamicRecord.h",
               "RelativeToolTip": "Database System\\DynamicRecord.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-02-17T20:16:03.906Z",
+              "WhenOpened": "2025-02-20T12:27:17.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CommandParser.cpp",
+              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandParser.cpp",
+              "RelativeDocumentMoniker": "Database System\\CommandParser.cpp",
+              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandParser.cpp",
+              "RelativeToolTip": "Database System\\CommandParser.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-19T23:20:56.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CommandParser.h",
+              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandParser.h",
+              "RelativeDocumentMoniker": "Database System\\CommandParser.h",
+              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandParser.h",
+              "RelativeToolTip": "Database System\\CommandParser.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-19T22:16:35.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CommandType.h",
+              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandType.h",
+              "RelativeDocumentMoniker": "Database System\\CommandType.h",
+              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\CommandType.h",
+              "RelativeToolTip": "Database System\\CommandType.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-19T22:16:27.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TerminalInterface.cpp",
+              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\TerminalInterface.cpp",
+              "RelativeDocumentMoniker": "Database System\\TerminalInterface.cpp",
+              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\TerminalInterface.cpp",
+              "RelativeToolTip": "Database System\\TerminalInterface.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-19T22:06:25.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TerminalInterface.h",
+              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\TerminalInterface.h",
+              "RelativeDocumentMoniker": "Database System\\TerminalInterface.h",
+              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\TerminalInterface.h",
+              "RelativeToolTip": "Database System\\TerminalInterface.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-19T21:59:55.491Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Record.cpp",
-              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.cpp",
-              "RelativeDocumentMoniker": "Database System\\Record.cpp",
-              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.cpp",
-              "RelativeToolTip": "Database System\\Record.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-02-17T19:40:17.796Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "DatabaseManager.h",
               "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DatabaseManager.h",
               "RelativeDocumentMoniker": "Database System\\DatabaseManager.h",
               "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DatabaseManager.h",
               "RelativeToolTip": "Database System\\DatabaseManager.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAgwCMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-02-17T18:39:15.884Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "Record.cpp",
+              "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.cpp",
+              "RelativeDocumentMoniker": "Database System\\Record.cpp",
+              "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Record.cpp",
+              "RelativeToolTip": "Database System\\Record.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-17T19:40:17.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "DatabaseManager.cpp",
               "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DatabaseManager.cpp",
               "RelativeDocumentMoniker": "Database System\\DatabaseManager.cpp",
               "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\DatabaseManager.cpp",
               "RelativeToolTip": "Database System\\DatabaseManager.cpp",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAAAIkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAAAA4BAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-17T15:34:14.528Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Main.cpp",
               "RelativeDocumentMoniker": "Database System\\Main.cpp",
               "ToolTip": "C:\\Users\\Z6KDM\\Desktop\\myProjects\\DataBase\\Database System\\Database System\\Main.cpp",
               "RelativeToolTip": "Database System\\Main.cpp",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAAFcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-02-16T21:21:19.094Z",
               "EditorCaption": ""

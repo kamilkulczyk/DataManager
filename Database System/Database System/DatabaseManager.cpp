@@ -2,7 +2,7 @@
 
 #include <fstream>
 
-Record* DatabaseManager::Get(int id)
+Record* DatabaseManager::getRecord(int id)
 {
 	auto it = records.find(id);
 	if (it != records.end())
@@ -10,34 +10,42 @@ Record* DatabaseManager::Get(int id)
 	return nullptr;
 }
 
-bool DatabaseManager::Add(int id, const std::string& type, const std::string& name, const std::vector<std::string>& properties) {
-	if (recordSchemas.find(type) == recordSchemas.end()) {
+bool DatabaseManager::addRecord(int id, const std::string& type, const std::string& name, const std::vector<std::string>& properties)
+{
+	if (recordSchemas.find(type) == recordSchemas.end())
+	{
 		std::cerr << "Error: Record type not defined.\n";
 		return false;
 	}
 
 	const RecordSchema& schema = recordSchemas[type];
 
-	for (const auto& pk : schema.primaryKeys) {
+	for (const auto& pk : schema.primaryKeys)
+	{
 		auto it = std::find(schema.fields.begin(), schema.fields.end(), pk);
-		if (it != schema.fields.end()) {
+		if (it != schema.fields.end())
+		{
 			int pkIndex = std::distance(schema.fields.begin(), it);
 			const std::string& pkValue = properties[pkIndex];
 
-			if (CheckPrimaryKeyExists(type, pk, pkValue)) {
+			if (checkPrimaryKeyExists(type, pk, pkValue))
+			{
 				std::cerr << "Error: Duplicate primary key '" << pkValue << "' detected.\n";
 				return false;
 			}
 		}
 	}
 
-	for (const auto& fk : schema.foreignKeys) {
+	for (const auto& fk : schema.foreignKeys)
+	{
 		auto it = std::find(schema.fields.begin(), schema.fields.end(), fk.fieldName);
-		if (it != schema.fields.end()) {
+		if (it != schema.fields.end())
+		{
 			int fkIndex = std::distance(schema.fields.begin(), it);
 			const std::string& fkValue = properties[fkIndex];
 
-			if (!CheckForeignKeyExists(fk, fkValue)) {
+			if (!checkForeignKeyExists(fk, fkValue))
+			{
 				std::cerr << "Error: Foreign key constraint failed. '" << fkValue
 					<< "' not found in referenced record type '" << fk.referencedType << "'.\n";
 				return false;
@@ -51,7 +59,7 @@ bool DatabaseManager::Add(int id, const std::string& type, const std::string& na
 	return true;
 }
 
-bool DatabaseManager::Delete(int id)
+bool DatabaseManager::deleteRecord(int id)
 {
 	auto it = records.find(id);
 	if (it == records.end())
@@ -60,7 +68,7 @@ bool DatabaseManager::Delete(int id)
 	return true;
 }
 
-void DatabaseManager::DefineNewType(
+void DatabaseManager::defineNewType(
 	const std::string& typeName,
 	const std::vector<std::string>& fields,
 	const std::vector<std::string>& primaryKeys,
@@ -75,7 +83,7 @@ void DatabaseManager::DefineNewType(
 	recordSchemas[typeName] = { typeName, fields, primaryKeys, foreignKeys };
 }
 
-void DatabaseManager::ListTypes() const
+void DatabaseManager::listAllTypes() const
 {
 	std::cout << "Available Record Types:\n";
 	for (const auto& pair : recordSchemas)
@@ -113,7 +121,7 @@ void DatabaseManager::ListTypes() const
 }
 
 
-void DatabaseManager::ListAllRecords() const
+void DatabaseManager::listAllRecords() const
 {
 	if (records.empty())
 	{
@@ -131,7 +139,7 @@ void DatabaseManager::ListAllRecords() const
 	std::cout << "-----------------" << std::endl;
 }
 
-bool DatabaseManager::SaveToFile(const std::string& fileName) const
+bool DatabaseManager::saveToFile(const std::string& fileName) const
 {
 	std::ofstream file;
 	file.open(fileName);
@@ -153,7 +161,7 @@ bool DatabaseManager::SaveToFile(const std::string& fileName) const
 	return true;
 }
 
-void DatabaseManager::LoadFromFile(const std::string& fileName)
+void DatabaseManager::loadFromFile(const std::string& fileName)
 {
 	std::ifstream file(fileName);
 	if (!file.is_open())
@@ -184,18 +192,16 @@ void DatabaseManager::LoadFromFile(const std::string& fileName)
 		}
 
 		while (std::getline(ss, value, ';'))
-		{
 			properties.push_back(value);
-		}
 
-		Add(id, type, name, properties);
+		addRecord(id, type, name, properties);
 	}
 
 	file.close();
 	std::cout << "Records successfully loaded from " << fileName << std::endl;
 }
 
-bool DatabaseManager::ValidatePrimaryKey(const std::string& typeName, const std::vector<std::string>& values)
+bool DatabaseManager::validatePrimaryKey(const std::string& typeName, const std::vector<std::string>& values)
 {
 	const auto& schema = recordSchemas[typeName];
 
@@ -216,7 +222,7 @@ bool DatabaseManager::ValidatePrimaryKey(const std::string& typeName, const std:
 	return true;
 }
 
-bool DatabaseManager::ValidateForeignKey(const std::string& typeName, const std::vector<std::string>& values)
+bool DatabaseManager::validateForeignKey(const std::string& typeName, const std::vector<std::string>& values)
 {
 	const auto& schema = recordSchemas[typeName];
 
@@ -240,7 +246,7 @@ bool DatabaseManager::ValidateForeignKey(const std::string& typeName, const std:
 	return true;
 }
 
-bool DatabaseManager::CheckPrimaryKeyExists(const std::string& type, const std::string& pkField, const std::string& pkValue)
+bool DatabaseManager::checkPrimaryKeyExists(const std::string& type, const std::string& pkField, const std::string& pkValue)
 {
 	for (const auto& pair : records)
 	{
@@ -260,7 +266,7 @@ bool DatabaseManager::CheckPrimaryKeyExists(const std::string& type, const std::
 }
 
 
-bool DatabaseManager::CheckForeignKeyExists(const ForeignKey& fk, const std::string& fkValue)
+bool DatabaseManager::checkForeignKeyExists(const ForeignKey& fk, const std::string& fkValue)
 {
 	for (const auto& pair : records)
 	{

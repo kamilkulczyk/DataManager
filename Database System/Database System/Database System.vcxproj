@@ -131,13 +131,16 @@
     <ClCompile Include="DatabaseManager.cpp" />
     <ClCompile Include="DatabaseManager.h" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="CommandParser.cpp" />
     <ClCompile Include="Record.cpp" />
     <ClCompile Include="Record.h" />
+    <ClCompile Include="TerminalInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommandParser.h" />
     <ClInclude Include="DynamicRecord.h" />
     <ClInclude Include="RecordSchema.h" />
+    <ClInclude Include="TerminalInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

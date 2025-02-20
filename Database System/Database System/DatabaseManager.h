@@ -17,33 +17,33 @@ public:
 
 	DatabaseManager() = default;
 
-	bool Add(int it, const std::string& type, const std::string& name, const std::vector<std::string>& properties);
+	bool addRecord(int it, const std::string& type, const std::string& name, const std::vector<std::string>& properties);
 
-	Record* Get(int id);
+	Record* getRecord(int id);
 
-	bool Delete(int id);
+	bool deleteRecord(int id);
 
-	void DefineNewType(
+	void defineNewType(
 		const std::string& typeName,
 		const std::vector<std::string>& fields,
 		const std::vector<std::string>& primaryKeys,
 		const std::vector<ForeignKey>& foreignKeys);
 
-	void ListTypes() const;
+	void listAllTypes() const;
 
-	void ListAllRecords() const;
+	void listAllRecords() const;
 
-	bool SaveToFile(const std::string& fileName) const;
+	bool saveToFile(const std::string& fileName) const;
 
-	void LoadFromFile(const std::string& fileName);
+	void loadFromFile(const std::string& fileName);
 
-	bool ValidatePrimaryKey(const std::string& typeName, const std::vector<std::string>& values);
+	bool validatePrimaryKey(const std::string& typeName, const std::vector<std::string>& values);
 	
-	bool ValidateForeignKey(const std::string& typeName, const std::vector<std::string>& values);
+	bool validateForeignKey(const std::string& typeName, const std::vector<std::string>& values);
 
-	bool CheckPrimaryKeyExists(const std::string& type, const std::string& pkField, const std::string& pkValue);
+	bool checkPrimaryKeyExists(const std::string& type, const std::string& pkField, const std::string& pkValue);
 
-	bool CheckForeignKeyExists(const ForeignKey& fk, const std::string& fkValue);
+	bool checkForeignKeyExists(const ForeignKey& fk, const std::string& fkValue);
 };
 
 #endif
