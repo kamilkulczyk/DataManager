@@ -78,7 +78,7 @@ void TerminalInterface::start()
         }
         case CommandType::ADD:
         {
-            std::string type, name;
+            std::string type;
             std::vector<std::string> values;
 
             std::cout << "Enter record type: ";
@@ -89,9 +89,6 @@ void TerminalInterface::start()
                 std::cerr << "Error: Record type not found!\n";
                 break;
             }
-
-            std::cout << "Enter name: ";
-            std::cin >> name;
 
             const RecordSchema& schema = dbManager->recordSchemas[type];
 
@@ -105,7 +102,7 @@ void TerminalInterface::start()
                 values.push_back(value);
             }
 
-            if (dbManager->addRecord(0, type, name, values))
+            if (dbManager->addRecord(0, type, values))
                 std::cout << "Record added successfully!\n";
             else
                 std::cerr << "Failed to add record due to validation errors.\n";

@@ -12,15 +12,14 @@ class Record
 protected:
     static int generalId;
     int id;
-    std::string name;
     std::string recordType;
     std::vector<std::string> properties;
     std::vector<std::string> primaryKeys;
     std::map<std::string, int> foreignKeys;
 
 public:
-    Record(int assignedId, const std::string& name, const std::string& type, std::vector<std::string> props = {})
-        : id(assignedId > 0 ? assignedId : ++generalId), name(name), recordType(type), properties(std::move(props))
+    Record(int assignedId, const std::string& type, std::vector<std::string> props = {})
+        : id(assignedId > 0 ? assignedId : ++generalId), recordType(type), properties(std::move(props))
     {
         generalId = generalId > assignedId ? generalId : assignedId;
     }

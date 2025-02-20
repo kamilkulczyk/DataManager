@@ -10,7 +10,7 @@ Record* DatabaseManager::getRecord(int id)
 	return nullptr;
 }
 
-bool DatabaseManager::addRecord(int id, const std::string& type, const std::string& name, const std::vector<std::string>& properties)
+bool DatabaseManager::addRecord(int id, const std::string& type, const std::vector<std::string>& properties, bool skipForignKeyCheck)
 {
 	if (recordSchemas.find(type) == recordSchemas.end())
 	{
@@ -36,24 +36,27 @@ bool DatabaseManager::addRecord(int id, const std::string& type, const std::stri
 		}
 	}
 
-	for (const auto& fk : schema.foreignKeys)
+	if (!skipForignKeyCheck)
 	{
-		auto it = std::find(schema.fields.begin(), schema.fields.end(), fk.fieldName);
-		if (it != schema.fields.end())
+		for (const auto& fk : schema.foreignKeys)
 		{
-			int fkIndex = std::distance(schema.fields.begin(), it);
-			const std::string& fkValue = properties[fkIndex];
-
-			if (!checkForeignKeyExists(fk, fkValue))
+			auto it = std::find(schema.fields.begin(), schema.fields.end(), fk.fieldName);
+			if (it != schema.fields.end())
 			{
-				std::cerr << "Error: Foreign key constraint failed. '" << fkValue
-					<< "' not found in referenced record type '" << fk.referencedType << "'.\n";
-				return false;
+				int fkIndex = std::distance(schema.fields.begin(), it);
+				const std::string& fkValue = properties[fkIndex];
+
+				if (!checkForeignKeyExists(fk, fkValue))
+				{
+					std::cerr << "Error: Foreign key constraint failed. '" << fkValue
+						<< "' not found in referenced record type '" << fk.referencedType << "'.\n";
+					return false;
+				}
 			}
 		}
 	}
 
-	auto record = std::make_unique<DynamicRecord>(id, name, type, properties);
+	auto record = std::make_unique<DynamicRecord>(id, type, properties, &schema);
 	records[record->getId()] = std::move(record);
 
 	return true;
@@ -141,6 +144,7 @@ void DatabaseManager::listAllRecords() const
 
 bool DatabaseManager::saveToFile(const std::string& fileName) const
 {
+	char separator = ';';
 	std::ofstream file;
 	file.open(fileName);
 
@@ -150,9 +154,38 @@ bool DatabaseManager::saveToFile(const std::string& fileName) const
 		return false;
 	}
 
+	for (const auto& pair : recordSchemas)
+	{
+		const RecordSchema& schema = pair.second;
+		file << "SCHEMA;" << schema.typeName << separator;
+
+		for (size_t i = 0; i < schema.fields.size(); i++)
+		{
+			file << schema.fields[i];
+			if (i < schema.fields.size() - 1) file << ",";
+		}
+		file << separator;
+
+		for (size_t i = 0; i < schema.primaryKeys.size(); i++)
+		{
+			file << schema.primaryKeys[i];
+			if (i < schema.primaryKeys.size() - 1) file << ",";
+		}
+		file << separator;
+
+		for (size_t i = 0; i < schema.foreignKeys.size(); i++)
+		{
+			const ForeignKey& fk = schema.foreignKeys[i];
+			file << fk.fieldName << "|" << fk.referencedType << "|" << fk.referencedField;
+			if (i < schema.foreignKeys.size() - 1) file << ",";
+		}
+		file << "\n";
+	}
+
+	file << "DATA\n";
+
 	for (const auto& pair : records)
 	{
-		int id = pair.first;
 		const std::unique_ptr<Record>& record = pair.second;
 		file << record->toString();
 	}
@@ -170,20 +203,60 @@ void DatabaseManager::loadFromFile(const std::string& fileName)
 		return;
 	}
 
-	int maxId = 0;
 	std::string line;
+
+	while (std::getline(file, line) && line != "DATA")
+	{
+		if (line.substr(0, 7) != "SCHEMA;")
+		{
+			std::cerr << "Invalid schema line: " << line << "\n";
+			continue;
+		}
+		std::stringstream ss(line);
+		std::string token;
+		// Get "SCHEMA"
+		std::getline(ss, token, ';');
+		// Get typeName
+		std::string typeName;
+		std::getline(ss, typeName, ';');
+
+		std::string fieldsStr;
+		std::getline(ss, fieldsStr, ';');
+		std::vector<std::string> fields = split(fieldsStr, ',');
+
+		std::string pksStr;
+		std::getline(ss, pksStr, ';');
+		std::vector<std::string> primaryKeys = split(pksStr, ',');
+		// Get foreign keys (comma-separated list of fkField|refType|refField)
+		std::string fksStr;
+		std::getline(ss, fksStr, ';');
+		std::vector<ForeignKey> foreignKeys;
+		if (!fksStr.empty())
+		{
+			std::vector<std::string> fkEntries = split(fksStr, ',');
+			for (const std::string& entry : fkEntries)
+			{
+				std::vector<std::string> parts = split(entry, '|');
+				if (parts.size() == 3)
+				{
+					ForeignKey fk{ parts[0], parts[1], parts[2] };
+					foreignKeys.push_back(fk);
+				}
+			}
+		}
+		recordSchemas[typeName] = RecordSchema(typeName, fields, primaryKeys, foreignKeys);
+	}
 
 	while (std::getline(file, line))
 	{
 		std::stringstream ss(line);
-		std::string type, name, value;
+		std::string type, value;
 		int id;
 		std::vector<std::string> properties;
 
+		std::getline(ss, type, ';');
 		ss >> id;
 		ss.ignore(1, ';');
-		std::getline(ss, type, ';');
-		std::getline(ss, name, ';');
 
 		if (recordSchemas.find(type) == recordSchemas.end())
 		{
@@ -194,11 +267,16 @@ void DatabaseManager::loadFromFile(const std::string& fileName)
 		while (std::getline(ss, value, ';'))
 			properties.push_back(value);
 
-		addRecord(id, type, name, properties);
+		addRecord(id, type, properties, true);
 	}
 
 	file.close();
-	std::cout << "Records successfully loaded from " << fileName << std::endl;
+
+	// To decide what to handle the error (rollback, etc.)
+	if (!validateAllForeignKeys())
+		std::cerr << "Error: Some foreign key constraints are violated.\n";
+	else
+		std::cout << "Records successfully loaded from " << fileName << std::endl;
 }
 
 bool DatabaseManager::validatePrimaryKey(const std::string& typeName, const std::vector<std::string>& values)
@@ -284,3 +362,66 @@ bool DatabaseManager::checkForeignKeyExists(const ForeignKey& fk, const std::str
 	}
 	return false;
 }
+
+std::vector<std::string> DatabaseManager::split(const std::string& s, char delimiter) {
+	std::vector<std::string> tokens;
+	std::string token;
+	std::istringstream tokenStream(s);
+	while (std::getline(tokenStream, token, delimiter)) {
+		tokens.push_back(token);
+	}
+	return tokens;
+}
+
+bool DatabaseManager::validateAllForeignKeys()
+{
+	bool allValid = true;
+
+	for (const auto& recPair : records)
+	{
+		Record* rec = recPair.second.get();
+		std::string typeName = rec->getRecordType();
+		const RecordSchema& schema = recordSchemas.at(typeName);
+
+		for (const auto& fk : schema.foreignKeys)
+		{
+			auto it = std::find(schema.fields.begin(), schema.fields.end(), fk.fieldName);
+			if (it != schema.fields.end())
+			{
+				int index = std::distance(schema.fields.begin(), it);
+				std::string fkValue;
+
+				if (fk.fieldName == "id")
+					fkValue = std::to_string(rec->getId());
+				else
+				{
+					if (index < rec->getProperties().size())
+						fkValue = rec->getProperties()[index];
+					else
+					{
+						std::cerr << "Error: For record " << rec->getId()
+							<< ", field index " << index << " is out of range for properties.\n";
+						allValid = false;
+						continue;
+					}
+				}
+
+				if (!checkForeignKeyExists(fk, fkValue))
+				{
+					std::cerr << "Error: Foreign key validation failed for record " << rec->getId()
+						<< " on field " << fk.fieldName << " referencing "
+						<< fk.referencedType << "." << fk.referencedField << ".\n";
+					allValid = false;
+				}
+			}
+			else
+			{
+				std::cerr << "Error: Foreign key field '" << fk.fieldName
+					<< "' not found in schema for type '" << typeName << "'.\n";
+				allValid = false;
+			}
+		}
+	}
+	return allValid;
+}
+

@@ -1,0 +1,6 @@
+SCHEMA;firma;miasto,kategoria;id;
+SCHEMA;pracownik;firma;id;firma|firma|id
+DATA
+firma;1;Tulisiowo;Warszawa;Rolnictwo
+pracownik;2;Kamil;1
+pracownik;3;Karolcia;1

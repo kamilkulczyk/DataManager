@@ -17,7 +17,7 @@ public:
 
 	DatabaseManager() = default;
 
-	bool addRecord(int it, const std::string& type, const std::string& name, const std::vector<std::string>& properties);
+	bool addRecord(int it, const std::string& type, const std::vector<std::string>& properties, bool skipForignKeyCheck = false);
 
 	Record* getRecord(int id);
 
@@ -44,6 +44,10 @@ public:
 	bool checkPrimaryKeyExists(const std::string& type, const std::string& pkField, const std::string& pkValue);
 
 	bool checkForeignKeyExists(const ForeignKey& fk, const std::string& fkValue);
+
+private:
+	std::vector<std::string> split(const std::string& s, char delimiter);
+	bool validateAllForeignKeys();
 };
 
 #endif

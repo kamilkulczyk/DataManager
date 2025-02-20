@@ -27,7 +27,9 @@ struct RecordSchema
         const std::vector<ForeignKey>& userForeignKeys)
         : typeName(name), fields(userFields), primaryKeys(userPrimaryKeys), foreignKeys(userForeignKeys)
     {
-        primaryKeys.insert(primaryKeys.begin(), "id");
+        // Every record has id and it is always a primary key.
+        if (std::find(this->primaryKeys.begin(), this->primaryKeys.end(), "id") == this->primaryKeys.end())
+            this->primaryKeys.insert(this->primaryKeys.begin(), "id");
     }
 };
 

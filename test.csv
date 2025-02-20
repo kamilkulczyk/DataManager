@@ -1,0 +1,9 @@
+SCHEMA;firma;nazwa,miasto,kategoria;id;
+SCHEMA;pracownik;nazwa,firma;id;firma|firma|id
+DATA
+firma;1;Tulisiowo;Warszawa;Rolnictwo
+pracownik;2;Kamil Tulisi;1
+pracownik;3;Karolina Tulisi;1
+pracownik;4;Pani Dziunia;1
+firma;5;KawaiiKawka;Praga;slodycze
+pracownik;6;Dziunia;5

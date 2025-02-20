@@ -130,6 +130,7 @@
     <ClCompile Include="CommandType.h" />
     <ClCompile Include="DatabaseManager.cpp" />
     <ClCompile Include="DatabaseManager.h" />
+    <ClCompile Include="DynamicRecord.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="CommandParser.cpp" />
     <ClCompile Include="Record.cpp" />
